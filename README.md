@@ -1,121 +1,112 @@
-Fraud Detection in Financial Transactions
+🛡️ Fraud Detection in Financial Transactions
+🚀 Detecting fraudulent financial transactions using machine learning techniques
 
-Project Overview
 
-This project focuses on detecting fraudulent financial transactions using machine learning techniques. The dataset used is the creditcard.csv, which contains anonymized transaction data.
 
-Dataset Overview
 
-Rows: 284,807
 
-Columns: 31 (Features: V1 to V28, Time, Amount, and Class)
 
-Class Distribution:
+📌 Project Overview
+This project focuses on fraud detection in financial transactions using machine learning techniques. The dataset used is creditcard.csv, containing anonymized transaction data. Given the high imbalance in fraudulent vs. non-fraudulent transactions, we apply SMOTE to balance the dataset and leverage models like Random Forest, XGBoost, and Isolation Forest for robust fraud detection.
 
-Non-Fraudulent Transactions (0): 284,315
+📂 Dataset Overview
+📊 Rows: 284,807
+📊 Columns: 31 (Features: V1 to V28, Time, Amount, and Class)
+📊 Class Distribution:
+✅ Non-Fraudulent Transactions (0): 284,315
+🚨 Fraudulent Transactions (1): 492
+📊 Missing Values: 0
 
-Fraudulent Transactions (1): 492
+🔄 Data Preprocessing
+✔️ Standardized features using StandardScaler
+✔️ Applied SMOTE to handle class imbalance with a sampling strategy of 10%
+✔️ Split dataset into 80% training and 20% testing
 
-Missing Values: 0
+🤖 Models Used
+Model	Precision	Recall	F1-Score	ROC AUC Score
+Random Forest	1.00	0.99	0.99	0.9940
+XGBoost	1.00	1.00	1.00	0.9989
+Isolation Forest	Used for anomaly detection	-	-	-
+📊 Model Evaluation
+🔹 Random Forest Classifier
+✔️ Confusion Matrix:
 
-Data Preprocessing
-
-Standardized the features using StandardScaler.
-
-Applied SMOTE to handle class imbalance with a sampling strategy of 10%.
-
-Split the dataset into training (80%) and testing (20%).
-
-Models Used
-
-Random Forest Classifier
-
-XGBoost Classifier
-
-Isolation Forest (Anomaly Detection)
-
-Model Evaluation
-
-Random Forest Classifier:
-
-Confusion Matrix:
-
+lua
+Copy
+Edit
 [[56830    11]
  [   67  5642]]
+✔️ Classification Report:
 
-Classification Report:
-
+markdown
+Copy
+Edit
               precision    recall  f1-score   support
-
           0       1.00      1.00      1.00     56841
           1       1.00      0.99      0.99      5709
-
    accuracy                           1.00     62550
   macro avg       1.00      0.99      1.00     62550
-
 weighted avg       1.00      1.00      1.00     62550
+✔️ ROC AUC Score: 0.9940
 
-- **ROC AUC Score:** 0.9940
+🔹 XGBoost Classifier
+✔️ Confusion Matrix:
 
-### XGBoost Classifier:
-- **Confusion Matrix:**
-
+lua
+Copy
+Edit
 [[56832     9]
 [   11  5698]]
+✔️ Classification Report:
 
-- **Classification Report:**
-
+markdown
+Copy
+Edit
             precision    recall  f1-score   support
-
         0       1.00      1.00      1.00     56841
         1       1.00      1.00      1.00      5709
-
  accuracy                           1.00     62550
 macro avg       1.00      1.00      1.00     62550
-
 weighted avg       1.00      1.00      1.00     62550
+✔️ ROC AUC Score: 0.9989
 
-- **ROC AUC Score:** 0.9989
+📈 Key Observations
+✔️ Low False Negatives: Fraudulent transactions are rarely misclassified as non-fraudulent.
+✔️ Low False Positives: Genuine transactions are rarely misclassified as fraud.
+✔️ High ROC AUC Score: Near-perfect classification capability, ensuring strong fraud detection performance.
 
-## Significance and Observations
-### Confusion Matrix:
-- The confusion matrix provides a detailed breakdown of model performance in terms of correctly and incorrectly classified instances.
-- For both classifiers, false negatives (fraudulent transactions incorrectly classified as non-fraudulent) are minimal, indicating strong fraud detection capabilities.
-- False positives are also minimal, meaning legitimate transactions are rarely misclassified as fraud.
+📊 Visualizations
+📌 Anomaly Scores Distribution (Isolation Forest)
+📌 PCA Projection of Fraud and Non-Fraud Transactions
 
-### Classification Report:
-- **Precision:** Measures how many transactions classified as fraud are actually fraud. A high precision indicates fewer false positives.
-- **Recall:** Measures how many actual fraudulent transactions were correctly classified. High recall ensures minimal false negatives, which is critical in fraud detection.
-- **F1-Score:** The harmonic mean of precision and recall, providing a balanced measure of model performance.
+⚙️ How to Run
+1️⃣ Clone the Repository
 
-### ROC AUC Score:
-- The ROC AUC score measures the model’s ability to distinguish between fraudulent and non-fraudulent transactions.
-- A score close to 1.0 (e.g., 0.9989 for XGBoost) suggests near-perfect classification capability, confirming that the model performs exceptionally well in fraud detection.
+sh
+Copy
+Edit
+git clone https://github.com/Shrungal-DSAI/Fraud-Detection-Financial.git
+cd Fraud-Detection-Financial
+2️⃣ Install Dependencies
 
-## Visualizations
-- **Anomaly Scores Distribution (Isolation Forest)**
-- **PCA Projection of Fraud and Non-Fraud Transactions**
-
-## How to Run
-1. Clone the repository:
- ```sh
- git clone https://github.com/Shrungal-DSAI/Fraud-Detection-Financial.git
-
-Install dependencies:
-
+sh
+Copy
+Edit
 pip install -r requirements.txt
+3️⃣ Run the Script
 
-Run the Python script:
-
+sh
+Copy
+Edit
 python fraud_detection.py
+🔮 Future Improvements
+🚀 Try Deep Learning models (e.g., LSTM, Autoencoders) for anomaly detection
+🚀 Optimize hyperparameters using Bayesian Optimization
+🚀 Deploy as a real-time fraud detection API using Flask or FastAPI
 
-Conclusion
+✨ Author
+👤 Shrungal Kulkarni
+📧 Email
+🔗 GitHub
 
-Both the Random Forest and XGBoost classifiers performed exceptionally well, with XGBoost achieving a near-perfect ROC AUC score of 0.9989. Future work could include additional anomaly detection techniques and feature engineering to further improve fraud detection performance.
-
-Author
-
-Shrungal Kulkarni
-
-For any queries, feel free to reach out or raise an issue in this repository!
-
+⭐ If you found this project helpful, please consider giving it a star! 🌟
