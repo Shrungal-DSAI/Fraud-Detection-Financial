@@ -41,7 +41,8 @@ The models implemented include **Random Forest, XGBoost, and Isolation Forest**,
 ## 📊 Model Evaluation  
 
 ### 🔹 **Random Forest Classifier**  
-✔️ **Confusion Matrix** 
+✔️ Confusion Matrix
+
 Actual \ Predicted	Non-Fraud (0)	Fraud (1)
 Non-Fraud (0)	56830	11
 Fraud (1)	67	5642
