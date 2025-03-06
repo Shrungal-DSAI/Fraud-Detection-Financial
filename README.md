@@ -36,57 +36,12 @@ The models implemented include **Random Forest, XGBoost, and Isolation Forest**,
 | **XGBoost** | 1.00 | 1.00 | 1.00 | 0.9989 |  
 | **Isolation Forest** | Used for anomaly detection | - | - | - |  
 
-### 📊 Model Evaluation  
-#### 🔹 **Random Forest Classifier**  
-✔️ **Confusion Matrix**  
-[[56832 9]
-[ 11 5698]]
-
-✔️ **Classification Report**  
-           precision    recall  f1-score   support  
-0          1.00        1.00       1.00      56841  
-1          1.00        0.99       0.99       5709  
-
-accuracy 1.00 62550
-macro avg 1.00 0.99 1.00 62550
-weighted avg 1.00 1.00 1.00 62550
-
-✔️ **ROC AUC Score:** `0.9940`  
-
-#### 🔹 **XGBoost Classifier**  
-✔️ **Confusion Matrix**  
-[[56832 9]
-[ 11 5698]]
-
-✔️ **Classification Report**  
-           precision    recall  f1-score   support  
-0          1.00        1.00       1.00      56841  
-1          1.00        1.00       1.00       5709  
-
-accuracy 1.00 62550
-macro avg 1.00 1.00 1.00 62550
-weighted avg 1.00 1.00 1.00 62550
-
-✔️ **ROC AUC Score:** `0.9989`  
-
 ---
 
-## 📈 Key Observations  
-✔️ **Low False Negatives:** Fraudulent transactions are rarely misclassified as non-fraudulent.  
-✔️ **Low False Positives:** Genuine transactions are rarely misclassified as fraud.  
-✔️ **High ROC AUC Score:** Near-perfect classification capability, ensuring strong fraud detection performance.  
+## 📊 Model Evaluation  
 
----
-
-## 📊 Visualizations  
-📌 **Anomaly Scores Distribution (Isolation Forest)**  
-📌 **PCA Projection of Fraud vs. Non-Fraud Transactions**  
-
----
-
-## ⚙️ How to Run  
-
-### 1️⃣ Clone the Repository  
-```sh
-git clone https://github.com/Shrungal-DSAI/Fraud-Detection-Financial.git
-cd Fraud-Detection-Financial
+### 🔹 **Random Forest Classifier**  
+✔️ **Confusion Matrix** 
+Actual \ Predicted	Non-Fraud (0)	Fraud (1)
+Non-Fraud (0)	56830	11
+Fraud (1)	67	5642
